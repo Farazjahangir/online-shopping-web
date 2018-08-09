@@ -3,6 +3,13 @@ var adDetails = document.getElementById("ads-details");
 
 // Fetch an ad details
 window.addEventListener("load" , ()=>{
+
+    if (!navigator.onLine) {
+        adDetails.style.display = "none"
+        var offlineMsg = document.getElementById("offline-msg-div");
+        offlineMsg.style.display = "block";
+      }      
+
     db.collection("ads").doc(adId).get()
     .then((data)=>{
       console.log(data.data());

@@ -5,6 +5,7 @@ var searchResult = document.getElementById("search-result-div");
 
 const messaging = firebase.messaging(); //firebase messaging
 
+
 // request for push notiication
 messaging
   .requestPermission()
@@ -33,8 +34,9 @@ messaging.onMessage(payload => {
 function fetchData() {
   // Checking Is User Have Internet connection
   if (!navigator.onLine) {
-    var offlineMsg = document.getElementById("offline-msg-div");
+    // var offlineMsg = document.getElementById("offline-msg-div");
     offlineMsg.style.display = "block";
+    searchDiv.style.display = "none"
     return false;
   }
   adsContainer.innerHTML = "";

@@ -4,12 +4,15 @@ var userUid = localStorage.getItem("userUid");
 var adDiv = document.getElementById("ad-div"); 
 var confirmationMsg = document.getElementById("confirmation-msg-div");
 console.log(imageUploadEl.files);
-// window.addEventListener('load',()=>{
-//   if(!localStorage.getItem("isUser")){
-//     var adDiv = document.querySelector('#ad-div');
-//     adDiv.style.display = "none"
-//   }
-// })
+
+
+
+if (!navigator.onLine) {
+  adDiv.style.display = "none"
+  var offlineMsg = document.getElementById("offline-msg-div");
+  offlineMsg.style.display = "block";
+}
+
 
 
 // Function For Submit Add

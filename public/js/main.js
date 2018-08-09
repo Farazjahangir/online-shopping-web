@@ -7,7 +7,7 @@ var userUid = localStorage.getItem("userUid");
 var messageBox = document.getElementById("message-box");
 var currentUserName = document.getElementById("user");
 
-
+var offlineMsg = document.getElementById("offline-msg-div");
 
 
 // Getting current logged in user details

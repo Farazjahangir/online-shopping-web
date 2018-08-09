@@ -35,10 +35,10 @@
         <h1 class="text-center">Login</h1>
         <div id="signin-form">
             <div class="form-group">
-                <input type="text" class="form-control" id="signin-email" placeholder="Email..">
+                <input type="text" class="form-control" id="signin-email" placeholder="Email.."  onFocus="hideError()">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="signin-pwd" placeholder="Password..">
+                <input type="password" class="form-control" id="signin-pwd" placeholder="Password.."  onFocus="hideError()">
             </div>
             <div class="form-group">
                 <input type="button" value="SignIn" class="btn btn-success" onClick="signInUser()">
@@ -49,7 +49,7 @@
 
         </div>
         <div id="error-div">
-            <p id="error"></p>
+            <p id="error" onFocus= "hideError()"></p>
         </div>
     </div>
 

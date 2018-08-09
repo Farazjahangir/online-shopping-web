@@ -5,6 +5,15 @@ var adMessgae = document.getElementById("ads-message");
 
 // Fetching current user ads
 function FetchAds(){
+    if (!navigator.onLine) {
+        userAdsEl.style.display = "none"
+        adMessgae.style.display = "none"        
+        offlineMsg.style.display = "block";
+        hideLoader()
+        return false
+      }      
+
+
     showLoader("Fetching Your Ads..")
     db.collection("ads").where("userUid" , "==" , userUid).get()
         .then((data)=>{

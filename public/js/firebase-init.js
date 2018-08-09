@@ -1,17 +1,15 @@
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDsi4jd69OnCt7XQy3ejVJa9Zk2UxXvpHM",
-    authDomain: "online-shopping-12.firebaseapp.com",
-    databaseURL: "https://online-shopping-12.firebaseio.com",
-    projectId: "online-shopping-12",
-    storageBucket: "online-shopping-12.appspot.com",
-    messagingSenderId: "308900367468"
-  };
-  firebase.initializeApp(config);
 
+// ***************************************************** //
+
+// Paste Your Firebase Authentication Code Here
+
+
+
+// ******************************************************** //
   var auth = firebase.auth();
   var db = firebase.firestore();
   var storageRef = firebase.storage().ref()
+  var errorEl = document.getElementById("error")
 
 
   function showMessage(msg) {
@@ -31,6 +29,10 @@
   function hideLoader() {
     var loaderDiv = document.getElementById("loader-div");
     loaderDiv.style.display = "none";
+  }
+
+  function hideError(){
+      errorEl.innerHTML = ""
   }
   
 

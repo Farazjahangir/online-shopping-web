@@ -1,4 +1,4 @@
-var cacheName = 'e-commerce-v2';
+var cacheName = 'e-commerce-v1';
 var filesToCache = [
   '/',
   '/index.html',

@@ -4,9 +4,16 @@ var usersChat = document.getElementById("users-list");
 
 showLoader("Fetching Inbox..")
 
+
 // Fetching all users whom current had chatted before
 db.collection("rooms").where("userObj." + currentUserUid , "==" , true)
 .onSnapshot((querySnapshot)=>{
+    if (!navigator.onLine) {
+        usersChat.style.display = "none"
+        offlineMsg.style.display = "block";
+        hideLoader()
+        return false
+      }      
     console.log(querySnapshot);
     if(querySnapshot.empty){
         hideLoader()

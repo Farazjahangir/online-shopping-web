@@ -137,6 +137,9 @@
     margin-top: 100px;
     margin-right: 20px;
 }
+#signin-form-div input , #signup-form-div input{
+    border-color: rgba(0, 0, 0, 0.7);
+}  
 .link{
     font-size: 1.2em
 }
@@ -145,9 +148,10 @@
 }
 #error-div{
     text-align: center;
+    background-color: rgba(255, 0, 0, 0.4)
 }
 #error{
-    color: red;
+    color: black;
     font-size: 1.2em
 }
 
@@ -225,6 +229,9 @@ textarea{
     margin-left: 20px;
     cursor: pointer;
 }
+#select-input , #serach-input{
+    border-color: rgba(0, 0, 0, 0.5);
+} 
 #offline-msg-div{
     display: none;
     text-align: center;

@@ -12,11 +12,15 @@ var userObj = {
 var usersInfo = [currentUserUid, sellerUid];
 var isUser = localStorage.getItem("isUser");
 var msgDiv = document.getElementById("message-field-div");
-if (!isUser) {
-  msgDiv.style.display = "none";
-}
-
+// if (!isUser) {
+//   msgDiv.style.display = "none";
+// }
 const messaging = firebase.messaging();
+
+
+
+
+
 
 // request for push notiication
 messaging
@@ -71,6 +75,12 @@ function sendMsg() {
 
 // Fetching messages if contains or else create new room
 function fetchMsg() {
+  if (!navigator.onLine) {
+    messagesEl.style.display = "none"
+    msgDiv.style.display = "none"  
+    offlineMsg.style.display = "block";
+    return false
+  }  
   showLoader("Loading Messages")
   db.collection("rooms")
     .where("userObj." + currentUserUid, "==", true)
